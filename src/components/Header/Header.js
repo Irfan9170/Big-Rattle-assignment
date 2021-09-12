@@ -95,7 +95,11 @@ const getDataFromLocal=()=>{
                      <form className="form-inline" >
                <div className="dropdown">
 
-                <input  required ref={input} data-toggle="dropdown" className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
+                <input  list="browsers" required ref={input} data-toggle="dropdown" className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
+                <datalist id="browsers">
+                      {recent.map(item=><RecentSearched recent={item} />)}
+                </datalist>
+  
                  <span id="recent_result"></span>
                </div>
                 <button onClick={onButtonClick} className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
